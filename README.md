@@ -121,14 +121,14 @@ erDiagram
 
 ## 🧩 Project Structure
 
-Bookify/
-│
-├── Bookify.Web/            # Presentation layer (Controllers, Views, wwwroot)
-├── Bookify.Application/    # Application services (Services, DTOs)
-├── Bookify.Domain/         # Domain entities and core business logic
-├── Bookify.Infrastructure/ # Data access layer (EF Core, Repositories)
-├── Bookify.sln             # Solution file
-└── README.md               # Project documentation
+Bookify/<br>
+│<br>
+├── Bookify.Web/            # Presentation layer (Controllers, Views, wwwroot)<br>
+├── Bookify.Application/    # Application services (Services, DTOs)<br>
+├── Bookify.Domain/         # Domain entities and core business logic<br>
+├── Bookify.Infrastructure/ # Data access layer (EF Core, Repositories)<br>
+├── Bookify.sln             # Solution file<br>
+└── README.md               # Project documentation<br>
 
 ---
 
