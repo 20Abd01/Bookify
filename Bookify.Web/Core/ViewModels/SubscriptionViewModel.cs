@@ -1,19 +1,18 @@
-﻿namespace Bookify.Web.Core.ViewModels
+﻿namespace Bookify.Web.Core.ViewModels;
+
+public class SubscriptionViewModel
 {
-    public class SubscriptionViewModel
+    public DateTime StartDate { get; set; }
+
+    public DateTime EndDate { get; set; }
+
+    public DateTime CreatedOn { get; set; }
+
+    public string Status
     {
-        public DateTime StartDate { get; set; }
-
-        public DateTime EndDate { get; set; }
-
-        public DateTime CreatedOn { get; set; }
-
-        public string Status
+        get
         {
-            get
-            {
-                return DateTime.Today > EndDate ? SubscriptionStatus.Expired : DateTime.Today < StartDate ? string.Empty : SubscriptionStatus.Active;
-            }
+            return DateTime.Today > EndDate ? SubscriptionStatus.Expired : DateTime.Today < StartDate ? string.Empty : SubscriptionStatus.Active;
         }
     }
 }

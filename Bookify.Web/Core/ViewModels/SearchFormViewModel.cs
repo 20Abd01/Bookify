@@ -1,7 +1,6 @@
-﻿namespace Bookify.Web.Core.ViewModels
+﻿namespace Bookify.Web.Core.ViewModels;
+
+public class SearchFormViewModel
 {
-    public class SearchFormViewModel
-    {
-        public string Value { get; set; } = null!;
-    }
+    public string Value { get; set; } = null!;
 }

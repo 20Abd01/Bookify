@@ -1,8 +1,7 @@
-﻿namespace Bookify.Domain.Enums
+﻿namespace Bookify.Domain.Enums;
+
+public enum ReportsConfigurations
 {
-    public enum ReportsConfigurations
-    {
-        PageSize = 50,
-        MaxPaginationNumber = 10
-    }
+    PageSize = 50,
+    MaxPaginationNumber = 10
 }

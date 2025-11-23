@@ -3,42 +3,41 @@ using Microsoft.Extensions.Options;
 using System.Net;
 using System.Net.Mail;
 
-namespace Bookify.Web.Services
+namespace Bookify.Web.Services;
+
+public class EmailSender : IEmailSender
 {
-    public class EmailSender : IEmailSender
+    private readonly IWebHostEnvironment _webHostEnvironment;
+    private readonly MailSettings _mailSettings;
+
+    public EmailSender(IWebHostEnvironment webHostEnvironment,
+        IOptions<MailSettings> mailSettings)
     {
-        private readonly IWebHostEnvironment _webHostEnvironment;
-        private readonly MailSettings _mailSettings;
+        _webHostEnvironment = webHostEnvironment;
+        _mailSettings = mailSettings.Value;
+    }
 
-        public EmailSender(IWebHostEnvironment webHostEnvironment,
-            IOptions<MailSettings> mailSettings)
+    public async Task SendEmailAsync(string email, string subject, string htmlMessage)
+    {
+        MailMessage message = new()
         {
-            _webHostEnvironment = webHostEnvironment;
-            _mailSettings = mailSettings.Value;
-        }
+            From = new MailAddress(_mailSettings.Email!, _mailSettings.DisplayName),
+            Body = htmlMessage,
+            Subject = subject,
+            IsBodyHtml = true
+        };
 
-        public async Task SendEmailAsync(string email, string subject, string htmlMessage)
+        message.To.Add(_webHostEnvironment.IsDevelopment() ? "dev.creed@outlook.com" : email);
+
+        SmtpClient smtpClient = new(_mailSettings.Host)
         {
-            MailMessage message = new()
-            {
-                From = new MailAddress(_mailSettings.Email!, _mailSettings.DisplayName),
-                Body = htmlMessage,
-                Subject = subject,
-                IsBodyHtml = true
-            };
+            Port = _mailSettings.Port,
+            Credentials = new NetworkCredential(_mailSettings.Email, _mailSettings.Password),
+            EnableSsl = true
+        };
 
-            message.To.Add(_webHostEnvironment.IsDevelopment() ? "dev.creed@outlook.com" : email);
+        await smtpClient.SendMailAsync(message);
 
-            SmtpClient smtpClient = new(_mailSettings.Host)
-            {
-                Port = _mailSettings.Port,
-                Credentials = new NetworkCredential(_mailSettings.Email, _mailSettings.Password),
-                EnableSsl = true
-            };
-
-            await smtpClient.SendMailAsync(message);
-
-            smtpClient.Dispose();
-        }
+        smtpClient.Dispose();
     }
 }

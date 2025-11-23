@@ -1,8 +1,7 @@
-﻿namespace Bookify.Web.Core.ViewModels
+﻿namespace Bookify.Web.Core.ViewModels;
+
+public class ChartItemViewModel
 {
-    public class ChartItemViewModel
-    {
-        public string? Label { get; set; }
-        public string? Value { get; set; }
-    }
+    public string? Label { get; set; }
+    public string? Value { get; set; }
 }

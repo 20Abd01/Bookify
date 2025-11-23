@@ -1,9 +1,8 @@
-﻿namespace Bookify.Domain.Enums
+﻿namespace Bookify.Domain.Enums;
+
+public enum RentalsConfigurations
 {
-    public enum RentalsConfigurations
-    {
-        RentalDuration = 7,
-        MaxRentalDuration = 14,
-        MaxAllowedCopies = 3
-    }
+    RentalDuration = 7,
+    MaxRentalDuration = 14,
+    MaxAllowedCopies = 3
 }

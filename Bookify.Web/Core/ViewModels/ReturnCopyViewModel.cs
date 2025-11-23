@@ -1,8 +1,7 @@
-﻿namespace Bookify.Web.Core.ViewModels
+﻿namespace Bookify.Web.Core.ViewModels;
+
+public class ReturnCopyViewModel
 {
-    public class ReturnCopyViewModel
-    {
-        public int Id { get; set; }
-        public bool? IsReturned { get; set; }
-    }
+    public int Id { get; set; }
+    public bool? IsReturned { get; set; }
 }

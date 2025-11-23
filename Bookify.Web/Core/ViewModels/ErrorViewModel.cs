@@ -1,8 +1,7 @@
-namespace Bookify.Web.Core.ViewModels
+namespace Bookify.Web.Core.ViewModels;
+
+public class ErrorViewModel
 {
-    public class ErrorViewModel
-    {
-        public int ErrorCode { get; set; }
-        public string? ErrorDescription { get; set; }
-    }
+    public int ErrorCode { get; set; }
+    public string? ErrorDescription { get; set; }
 }

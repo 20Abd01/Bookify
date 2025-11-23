@@ -1,8 +1,7 @@
-﻿namespace Bookify.Domain.Consts
+﻿namespace Bookify.Domain.Consts;
+
+public static class SubscriptionStatus
 {
-    public static class SubscriptionStatus
-    {
-        public const string Active = "Active";
-        public const string Expired = "Expired";
-    }
+    public const string Active = "Active";
+    public const string Expired = "Expired";
 }

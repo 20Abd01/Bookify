@@ -1,15 +1,14 @@
-﻿namespace Bookify.Web.Core.ViewModels
+﻿namespace Bookify.Web.Core.ViewModels;
+
+public class RentalFormViewModel
 {
-    public class RentalFormViewModel
-    {
-        public int? Id { get; set; }
+    public int? Id { get; set; }
 
-        public string SubscriberKey { get; set; } = null!;
+    public string SubscriberKey { get; set; } = null!;
 
-        public IList<int> SelectedCopies { get; set; } = new List<int>();
+    public IList<int> SelectedCopies { get; set; } = new List<int>();
 
-        public IEnumerable<BookCopyViewModel> CurrentCopies { get; set; } = new List<BookCopyViewModel>();
+    public IEnumerable<BookCopyViewModel> CurrentCopies { get; set; } = new List<BookCopyViewModel>();
 
-        public int? MaxAllowedCopies { get; set; }
-    }
+    public int? MaxAllowedCopies { get; set; }
 }
