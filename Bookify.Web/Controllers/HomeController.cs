@@ -5,15 +5,12 @@ namespace Bookify.Web.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
     private readonly IApplicationDbContext _context;
     private readonly IMapper _mapper;
     private readonly IHashids _hashids;
 
-    public HomeController(ILogger<HomeController> logger, IApplicationDbContext context,
-        IMapper mapper, IHashids hashids)
+    public HomeController(IApplicationDbContext context, IMapper mapper, IHashids hashids)
     {
-        _logger = logger;
         _context = context;
         _mapper = mapper;
         _hashids = hashids;

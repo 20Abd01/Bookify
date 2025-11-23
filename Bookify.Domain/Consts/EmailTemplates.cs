@@ -2,6 +2,6 @@
 
 public static class EmailTemplates
 {
-    public static string Email = "email";
-    public static string Notification = "notification";
+    public const string Email = "email";
+    public const string Notification = "notification";
 }

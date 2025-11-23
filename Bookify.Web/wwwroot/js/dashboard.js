@@ -1,15 +1,29 @@
 ﻿var chart;
 
 $(document).ready(function () {
-    $('#DateRange').on('DOMSubtreeModified', function () {
-        var selectedRange = $(this).html();
 
-        if (selectedRange !== '') {
-            var dateRange = selectedRange.split(' - ');
+    const targetNode = document.getElementById('DateRange');
+
+    const observer = new MutationObserver(() => {
+        const selectedRange = targetNode.innerText.trim();
+        if (selectedRange) {
+            const dateRange = selectedRange.split(' - ');
             chart.destroy();
             drawRentalsChart(dateRange[0], dateRange[1]);
         }
     });
+
+    observer.observe(targetNode, { childList: true, subtree: true });
+
+    //$('#DateRange').on('DOMSubtreeModified', function () {
+    //    var selectedRange = $(this).html();
+
+    //    if (selectedRange !== '') {
+    //        var dateRange = selectedRange.split(' - ');
+    //        chart.destroy();
+    //        drawRentalsChart(dateRange[0], dateRange[1]);
+    //    }
+    //});
 });
 
 drawRentalsChart();

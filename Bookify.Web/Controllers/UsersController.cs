@@ -1,5 +1,4 @@
-﻿using Bookify.Domain.Entities;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.WebUtilities;
@@ -13,30 +12,18 @@ public class UsersController : Controller
 {
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly RoleManager<IdentityRole> _roleManager;
-    private readonly SignInManager<ApplicationUser> _signInManager;
     private readonly IEmailSender _emailSender;
-    private readonly IWebHostEnvironment _webHostEnvironment;
     private readonly IMapper _mapper;
-
     private readonly IEmailBodyBuilder _emailBodyBuilder;
 
-    public UsersController(UserManager<ApplicationUser> userManager,
-        RoleManager<IdentityRole> roleManager,
-        SignInManager<ApplicationUser> signInManager,
-        IEmailSender emailSender,
-        IWebHostEnvironment webHostEnvironment,
-        IMapper mapper,
-        IEmailBodyBuilder emailBodyBuilder)
+    public UsersController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IEmailSender emailSender, IMapper mapper, IEmailBodyBuilder emailBodyBuilder)
     {
         _userManager = userManager;
         _roleManager = roleManager;
-        _signInManager = signInManager;
         _emailSender = emailSender;
-        _webHostEnvironment = webHostEnvironment;
         _mapper = mapper;
         _emailBodyBuilder = emailBodyBuilder;
     }
-
 
     public async Task<IActionResult> Index()
     {

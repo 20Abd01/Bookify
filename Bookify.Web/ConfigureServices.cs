@@ -1,6 +1,4 @@
-﻿using Bookify.Domain.Entities;
-using Bookify.Infrastructure.Persistence;
-using Bookify.Web.Core.Mapping;
+﻿using Bookify.Web.Core.Mapping;
 using Bookify.Web.Helpers;
 using Hangfire;
 using HashidsNet;

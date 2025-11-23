@@ -1,6 +1,4 @@
-﻿using Bookify.Domain.Entities;
-
-namespace Bookify.Web.Controllers;
+﻿namespace Bookify.Web.Controllers;
 
 [Authorize(Roles = AppRoles.Archive)]
 public class BookCopiesController : Controller

@@ -202,7 +202,11 @@ $(document).ready(function () {
         singleDatePicker: true,
         autoApply: true,
         drops: 'up',
-        maxDate: new Date()
+        maxDate: new Date(),
+        startDate: moment(),
+        locale: {
+            format: 'YYYY/MM/DD'
+        }
     });
 
     //SweetAlert
@@ -271,7 +275,9 @@ $(document).ready(function () {
                             var newStatus = status.text().trim() === 'Deleted' ? 'Available' : 'Deleted';
                             status.text(newStatus).toggleClass('badge-light-success badge-light-danger');
                             row.find('.js-updated-on').html(lastUpdatedOn);
-                            row.addClass('animate__animated animate__flash');
+                            row.addClass('animate__animated animate__flash animate__slower');
+
+                            setTimeout(() => row.removeClass("animate__animated animate__flash animate__slower"), 2000);
 
                             showSuccessMessage();
                         },

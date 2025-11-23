@@ -1,5 +1,4 @@
-﻿using Bookify.Domain.Entities;
-using Microsoft.AspNetCore.DataProtection;
+﻿using Microsoft.AspNetCore.DataProtection;
 
 namespace Bookify.Web.Controllers;
 

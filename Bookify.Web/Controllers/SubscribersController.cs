@@ -1,5 +1,4 @@
-﻿using Bookify.Domain.Entities;
-using Hangfire;
+﻿using Hangfire;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc.Rendering;

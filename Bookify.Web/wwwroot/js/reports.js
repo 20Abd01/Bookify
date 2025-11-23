@@ -14,10 +14,13 @@
         autoUpdateInput: false,
         autoApply: true,
         minYear: 2020,
-        maxDate: new Date()
+        maxDate: new Date(),
+        locale: {
+            format: 'YYYY/MM/DD'
+        }
     });
 
     $('.js-date-range').on('apply.daterangepicker', function (ev, picker) {
-        $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+        $(this).val(picker.startDate.format('YYYY/MM/DD') + ' - ' + picker.endDate.format('YYYY/MM/DD'));
     });
 });
