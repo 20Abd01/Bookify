@@ -1,6 +1,6 @@
 # 📚 Bookify
 
-*Bookify* is a complete *Library Management System* developed using *ASP.NET MVC*.  
+*Bookify* is a complete *Library Management System* developed using *ASP.NET Core MVC*.  
 It aims to simplify the management of books, subscribers, rentals, and users in an organized and user-friendly way.
 
 ---
